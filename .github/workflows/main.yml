@@ -20,4 +20,4 @@ jobs:
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: docker push    
         run: |
-          echo "${DOCKER_USER}/projectname:version"
+          echo "$DOCKER_USER /projectname:version"
