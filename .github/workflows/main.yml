@@ -20,4 +20,4 @@ jobs:
           docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: docker push    
         run: |
-          docker push ${{ DOCKER_USER }}/projectname:version
+          docker push ${ DOCKER_USER }/projectname:version
