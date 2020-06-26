@@ -10,8 +10,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: docker build
+        env:
+         DOCKER_USER: ${{ secrets.DOCKER_USER}} 
         run: |
-         docker build . -t  projectname:version
+         docker build . -t  ${DOCKER_USER}/projectname:version
       - name: docker login
         env:
          DOCKER_USER: ${{ secrets.DOCKER_USER}} 
@@ -22,4 +24,4 @@ jobs:
         env:
          DOCKER_USER: ${{ secrets.DOCKER_USER}}    
         run: |
-          docker push karannautiyal/projectname:version
+          docker push ${DOCKER_USER}/projectname:version
